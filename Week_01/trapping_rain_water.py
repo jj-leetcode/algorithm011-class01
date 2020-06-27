@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 class Solution(object):
-    def trap_navie(self, height):
+    def trap_naive(self, height):
         from_left = [0 for x in height]
         from_right = [0 for x in height]
         left_bar = 0
@@ -40,3 +40,18 @@ class Solution(object):
                 right -= 1
         return ans
 
+    def trap_stack(self, height):
+        stack = []
+        ans = 0
+        for i in range(len(height)):
+            while len(stack) > 0 and height[i] > height[stack[-1]]:
+                water_bottom = height[stack.pop()]
+                if len(stack) == 0:
+                    break
+                left_bar_index = stack[-1]
+                lefr_bar = height[left_bar_index]
+                water_top = min(lefr_bar, height[i])
+                water_height = water_top - water_bottom
+                ans += water_height * (i - left_bar_index - 1)
+            stack.append(i)
+        return ans
