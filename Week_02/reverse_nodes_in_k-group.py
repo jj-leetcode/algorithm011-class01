@@ -5,8 +5,7 @@ class Solution(object):
         prev = tail.next
         p = head
         while p.next != tail.next:
-            #p.next, prev, p = prev, p, p.next
-            p, p.next, prev = p.next, prev, p
+            p.next, prev, p = prev, p, p.next
         p.next = prev
         return p, head
 

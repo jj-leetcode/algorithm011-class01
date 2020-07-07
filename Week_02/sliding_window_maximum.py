@@ -35,4 +35,3 @@ class Solution(object):
             update_queue(i)
             res.append(nums[windows[0]])
         return res
-
