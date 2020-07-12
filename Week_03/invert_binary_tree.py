@@ -2,15 +2,17 @@
 from __future__ import unicode_literals
 
 class Solution(object):
-    def invertTree_recursive(self, root):
+    def invertTree(self, root):
         if root is None:
             return None
+
         root.right, root.left = self.invertTree(root.left), self.invertTree(root.right)
         return root
 
 
 class Solution(object):
-    def invertTree_iterative(self, root):
+    def invertTree(self, root):
+
         if not root:
             return
         stack = [root]
