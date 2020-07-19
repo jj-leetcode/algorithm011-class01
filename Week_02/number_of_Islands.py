@@ -33,11 +33,3 @@ class Solution(object):
                                     grid[m][n] = '0'
                                 visited.add((m,n))
         return count
-
-                
-
-if __name__ == '__main__':
-    from IPython import embed
-    grid = [["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]]
-    S = Solution()
-    embed()

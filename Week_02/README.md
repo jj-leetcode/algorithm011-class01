@@ -15,7 +15,7 @@ ssh-add ~/.ssh/id_rsa_xxx
 ​			check the modified ssh-agent
 
 ```bash
-ssh-add-l
+ssh-add -l
 ```
 
 ​			https://www.dribin.org/dave/blog/archives/2007/11/28/ssh_agent_leopard/
